@@ -76,6 +76,7 @@
         <button class="btn" onclick="vehicleVideo()">Vehicle</button>
         <button class="btn" onclick="personVideo()">Person</button>
         <button class="btn" onclick="animalVideo()">Animal</button>
+        <button class="btn" onclick="packageVideo()">Package</button>
     </div>
     <div class="player">
         <iframe id="Playlist" allow="autoplay" frameborder="0" width="100%" height="100%">
@@ -97,6 +98,12 @@
     function animalVideo() {
         localStorage.setItem('type', 'Animal');
         const url = "https://www.youtube.com/embed/JuQLtbBZKxg?playlist=JuQLtbBZKxg&autoplay=1&loop=1&mute=1&enablejsapi=1";
+        document.getElementById('Playlist').src = url;
+    }
+
+    function packageVideo(){
+        localStorage.setItem('type','Package');
+        const url = "https://www.youtube.com/watch?v=hqr4ugFyi00";
         document.getElementById('Playlist').src = url;
     }
     function randomVideo() {
@@ -141,7 +148,10 @@
             personVideo();
         } else if (type == "Animal") {
             animalVideo();
-        } else {
+        } else if (type == "Package"){
+            packageVideo();
+        } 
+        else {
             randomVideo();
         }
         showTime();

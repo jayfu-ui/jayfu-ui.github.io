@@ -76,6 +76,7 @@
         <button class="btn" onclick="vehicleVideo()">Vehicle</button>
         <button class="btn" onclick="personVideo()">Person</button>
         <button class="btn" onclick="animalVideo()">Animal</button>
+        <button class="btn" onclick="alarmVideo()">Alarm</button>
         <button class="btn" onclick="packageVideo()">Package</button>
     </div>
     <div class="player">
@@ -98,6 +99,12 @@
     function animalVideo() {
         localStorage.setItem('type', 'Animal');
         const url = "https://www.youtube.com/embed/JuQLtbBZKxg?playlist=JuQLtbBZKxg&autoplay=1&loop=1&mute=1&enablejsapi=1";
+        document.getElementById('Playlist').src = url;
+    }
+
+    function alarmVideo() {
+        localStorage.setItem('type', 'Alarm');
+        const url = "https://www.youtube.com/embed/1kIVe1RrIAc?playlist=1kIVe1RrIAc&autoplay=1&loop=1&mute=1&enablejsapi=1"
         document.getElementById('Playlist').src = url;
     }
 
@@ -148,7 +155,9 @@
             personVideo();
         } else if (type == "Animal") {
             animalVideo();
-        } else if (type == "Package"){
+        } else if (type == "Alarm") {
+            alarmVideo();
+        } else if (type == "Package") {
             packageVideo();
         } else {
             randomVideo();
